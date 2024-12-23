@@ -1,0 +1,50 @@
+---Big Bang Drive
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Dopamine HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Movement"
+})
+
+Tab:AddSlider({
+	Name = "Walkspeed",
+	Min = 16,
+	Max = 1000000,
+	Default = 5,
+	Color = Color3.fromRGB(23,9,9),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+Tab:AddSlider({
+	Name = "Jumpower",
+	Min = 16,
+	Max = 1000000,
+	Default = 5,
+	Color = Color3.fromRGB(23,9,9),
+	Increment = 1,
+	ValueName = "Power",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+}) 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/takokunym/FlyGuiV4/refs/heads/main/main.txt"))()
+
+OrionLib:MakeNotification({
+	Name = "hi my nigga",
+	Content = "comes with a fly hub so u can close it if you want (fuck you niggas)",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
